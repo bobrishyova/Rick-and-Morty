@@ -1,0 +1,21 @@
+.divWithCharacterInformation {
+	display: flex;
+	padding: 10px 0 10px 0;
+	border-bottom: 1px solid #ffffff;
+	align-items: center;
+}
+
+.divCharacterItem {
+	width: 232px;
+	text-align: center;
+}
+
+.divCharacterName {
+	width: 232px;
+}
+
+@media (max-width: 700px) {
+	.itemCharacter {
+		font-size: 12px;
+	}
+}

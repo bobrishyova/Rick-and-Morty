@@ -4,37 +4,41 @@ import { Link } from 'react-router-dom'
 import './styles.css'
 
 const CharacterItem = ({
-	character = {},
+	item = {},
 }) => {
+	const linksCharacterItem = { 
+		textDecoration: "none",
+		color: "#ffffff",
+	}
 	return (
 		<div className="divWithCharacterInformation">
 			<Link 
 				className="divCharacterName" 
-				style={{textDecoration: "none", color: "#ffffff"}} 
-				to={`/character/${character.id}`}
+				style={linksCharacterItem} 
+				to={`/character/${item.id}`}
 			>
-				<p className="itemCharacter">{character.name}</p>
+				<p className="itemCharacter">{item.name}</p>
 			</Link>
 			<Link 
 				className="divCharacterItem" 
-				style={{textDecoration: "none", color: "#ffffff"}} 
-				to={`/character/${character.id}`}
+				style={linksCharacterItem} 
+				to={`/character/${item.id}`}
 			>
-				<p className="itemCharacter">{character.status}</p>
+				<p className="itemCharacter">{item.status}</p>
 			</Link>
 			<Link 
 				className="divCharacterItem" 
-				style={{textDecoration: "none", color: "#ffffff"}} 
-				to={`/character/${character.id}`}
+				style={linksCharacterItem} 
+				to={`/character/${item.id}`}
 			>
-				<p className="itemCharacter">{character.species}</p>
+				<p className="itemCharacter">{item.species}</p>
 			</Link>
 			<Link 
 				className="divCharacterItem" 
-				style={{textDecoration: "none", color: "#ffffff"}} 
-				to={`/character/${character.id}`}
+				style={linksCharacterItem} 
+				to={`/character/${item.id}`}
 			>
-				<p className="itemCharacter">{character.gender}</p>
+				<p className="itemCharacter">{item.gender}</p>
 			</Link>
 		</div>
 	)

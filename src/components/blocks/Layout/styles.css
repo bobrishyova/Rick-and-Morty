@@ -1,4 +1,4 @@
-.headerLocations {
+.tableHeader {
 	width: 70%;
 	margin: 0 auto;
 	background-color: #565961;
@@ -6,33 +6,41 @@
 	border-radius: 10px;
 	margin-top: 30px;
 	font-size: 18px;
-	padding: 20px 40px 20px 40px;
+	padding: 20px 40px;
 }
 
-.locationsInformation {
+.information {
 	display: flex;
 	padding: 10px 0 10px 0;
 	border-bottom: 4px double #ffffff;
 }
-
-.nameLocation {
-	width: 309px;
-}
-
-.typeLocation, 
-.dimensionLocation {
+ 
+.tableItems {
 	width: 309px;
 	text-align: center;
 }
 
+.tableItems:first-child {
+	text-align: start;
+}
+
+.tableItemsWithSmallerDiv {
+	width: 232px;
+	text-align: center;
+}
+
+.tableItemsWithSmallerDiv:first-child {
+	text-align: start;
+}
+
 @media (max-width: 700px) {
-	.locationsInformation {
+	.information {
 		font-size: 12px;
 	}
 }
 
 @media (max-width: 500px) {
-	.headerLocations {
+	.tableHeader {
 		width: 95%;
 		padding: 10px 20px;
 	}

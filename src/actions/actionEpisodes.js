@@ -1,6 +1,7 @@
 import { FETCH_EPISODES } from './actionTypes'
+import { URL_EPISODES } from '../constants/api'
 
-const url = 'https://rickandmortyapi.com/api/episode/?page='
+const url = URL_EPISODES
 
 export const fetchEpisodes = (page) => async dispatch => {
 	const response = await fetch(`${url}${page}`)

@@ -1,6 +1,7 @@
 import { FETCH_CHARACTERS } from './actionTypes' 
+import { URL_CHARACTERS } from '../constants/api'
 
-const url = 'https://rickandmortyapi.com/api/character/?page='
+const url = URL_CHARACTERS
 
 export const fetchCharacters = (page) => async dispatch => {
 	const response = await fetch(`${url}${page}`)

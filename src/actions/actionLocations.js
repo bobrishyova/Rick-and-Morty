@@ -1,6 +1,7 @@
 import { FETCH_LOCATIONS } from './actionTypes'
+import { URL_LOCATIONS } from '../constants/api'
 
-const url = 'https://rickandmortyapi.com/api/location/?page='
+const url = URL_LOCATIONS
 
 export const fetchLocations = (page) => async dispatch => {
 	const response = await fetch(`${url}${page}`)

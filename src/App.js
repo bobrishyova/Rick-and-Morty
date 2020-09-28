@@ -9,6 +9,14 @@ import СharacterInfo from './components/pages/СharacterInfo'
 import LocationInfo from './components/pages/LocationInfo'
 import EpisodeInfo from './components/pages/EpisodeInfo'
 import store from './store'
+import { 
+  CHARACTERS_PAGE, 
+  LOCATIONS_PAGE, 
+  EPISODES_PAGE, 
+  CHARACTER_INFO_PAGE, 
+  LOCATION_INFO_PAGE, 
+  EPISODE_INFO_PAGE 
+} from './constants/routes' 
 
 const App = () => {
   return (
@@ -16,12 +24,12 @@ const App = () => {
       <Router>
         <Header />
         <Switch>
-          <Route path="/characters" component={Characters} />
-          <Route path="/locations" component={Locations} />
-          <Route path="/episodes" component={Episodes} />
-          <Route path="/character/:id" component={СharacterInfo} />
-          <Route path="/location/:id" component={LocationInfo} />
-          <Route path="/episode/:id" component={EpisodeInfo} />
+          <Route path={CHARACTERS_PAGE} component={Characters} />
+          <Route path={LOCATIONS_PAGE} component={Locations} />
+          <Route path={EPISODES_PAGE} component={Episodes} />
+          <Route path={CHARACTER_INFO_PAGE} component={СharacterInfo} />
+          <Route path={LOCATION_INFO_PAGE} component={LocationInfo} />
+          <Route path={EPISODE_INFO_PAGE} component={EpisodeInfo} />
         </Switch>
       </Router>
     </Provider>

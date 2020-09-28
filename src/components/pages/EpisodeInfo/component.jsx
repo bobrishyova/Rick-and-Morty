@@ -1,6 +1,6 @@
 import React, { useEffect, useCallback, useMemo } from 'react'
 import { useParams } from 'react-router-dom'
-import customArrayUrlParse from '../../../utils/customArrayUrlParse'
+import customArrayUrlParse from '../../../helpers/customArrayUrlParse'
 
 import './styles.css'
 

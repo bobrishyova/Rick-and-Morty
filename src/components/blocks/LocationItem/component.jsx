@@ -4,30 +4,34 @@ import { Link } from 'react-router-dom'
 import './styles.css'
 
 const LocationItem = ({
-	location = {},
+	item = {},
 }) => {
+	const linksLocationItem  = { 
+		textDecoration: "none",
+		color: "#ffffff",
+	}
 	return (
 		<div className="divWithLocationInformation">
 			<Link 
 				className="divLocationName" 
-				style={{textDecoration: "none", color: "#ffffff"}} 
-				to={`/location/${location.id}`}
+				style={linksLocationItem} 
+				to={`/location/${item.id}`}
 			>
-				<p className="itemLocation">{location.name}</p>
+				<p className="itemLocation">{item.name}</p>
 			</Link>
 			<Link 
 				className="divLocationItem" 
-				style={{textDecoration: "none", color: "#ffffff"}} 
-				to={`/location/${location.id}`}
+				style={linksLocationItem} 
+				to={`/location/${item.id}`}
 			>
-				<p className="itemLocation">{location.dimension}</p>
+				<p className="itemLocation">{item.dimension}</p>
 			</Link>
 			<Link 
 				className="divLocationItem" 
-				style={{textDecoration: "none", color: "#ffffff"}} 
-				to={`/location/${location.id}`}
+				style={linksLocationItem} 
+				to={`/location/${item.id}`}
 			>
-				<p className="itemLocation">{location.type}</p>
+				<p className="itemLocation">{item.type}</p>
 			</Link>
 		</div>
 	)

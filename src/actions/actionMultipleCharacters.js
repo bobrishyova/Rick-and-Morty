@@ -1,6 +1,7 @@
 import { FETCH_MULTIPLE_CHARACTER } from './actionTypes' 
-
-const url = 'https://rickandmortyapi.com/api/character/'
+import { URL_CHARACTER } from '../constants/api'
+ 
+const url = URL_CHARACTER
 
 export const fetchMultipleCharacters = (arrayId) => async dispatch => {
 	const response = await fetch(`${url}${arrayId}`)

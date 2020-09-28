@@ -4,30 +4,34 @@ import { Link } from 'react-router-dom'
 import './styles.css'
 
 const EpisodeItem = ({
-	episode = {},
+	item = {},
 }) => {
+	const linksEpisodeItem = { 
+		textDecoration: "none",
+		color: "#ffffff",
+	}
 	return (
 		<div className="divWithEpisodeInformation">
 			<Link 
 				className="divEpisodeName" 
-				style={{textDecoration: "none", color: "#ffffff"}} 
-				to={`/episode/${episode.id}`}
+				style={linksEpisodeItem} 
+				to={`/episode/${item.id}`}
 			>
-				<p className="itemEpisode">{episode.name}</p>
+				<p className="itemEpisode">{item.name}</p>
 			</Link>
 			<Link 
 				className="divEpisodeItem" 
-				style={{textDecoration: "none", color: "#ffffff"}} 
-				to={`/episode/${episode.id}`}
+				style={linksEpisodeItem} 
+				to={`/episode/${item.id}`}
 			>
-				<p className="itemEpisode">{episode.air_date}</p>
+				<p className="itemEpisode">{item.air_date}</p>
 			</Link>
 			<Link 
 				className="divEpisodeItem" 
-				style={{textDecoration: "none", color: "#ffffff"}} 
-				to={`/episode/${episode.id}`}
+				style={linksEpisodeItem} 
+				to={`/episode/${item.id}`}
 			>
-				<p className="itemEpisode">{episode.episode}</p>
+				<p className="itemEpisode">{item.episode}</p>
 			</Link>
 		</div>
 	)

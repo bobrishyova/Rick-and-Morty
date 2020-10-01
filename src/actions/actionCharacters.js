@@ -1,9 +1,7 @@
-import { FETCH_CHARACTERS, URL_CHARACTERS } from '@/constants';
-
-const url = URL_CHARACTERS;
+import { FETCH_CHARACTERS, URL_CHARACTER } from '@/constants';
 
 const fetchCharacters = (page) => async (dispatch) => {
-  const response = await fetch(`${url}${page}`);
+  const response = await fetch(`${URL_CHARACTER}/?page=${page}`);
   const result = await response.json();
 
   dispatch({

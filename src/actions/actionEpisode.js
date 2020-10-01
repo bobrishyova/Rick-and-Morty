@@ -1,9 +1,7 @@
 import { FETCH_EPISODE, URL_EPISODE } from '@/constants';
 
-const url = URL_EPISODE;
-
 const fetchEpisode = (id) => async (dispatch) => {
-  const response = await fetch(`${url}${id}`);
+  const response = await fetch(`${URL_EPISODE}${id}`);
   const result = await response.json();
 
   dispatch({

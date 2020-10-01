@@ -4,6 +4,7 @@ import Moment from 'react-moment';
 import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
 import customArrayUrlParse from '@/helpers/customArrayUrlParse';
+import DATE_OF_CREATION from '@/constants/format';
 
 import './styles.css';
 
@@ -55,7 +56,7 @@ const СharacterInfo = ({
         </p>
         <p className="infoCharacter">
           Created:
-          <Moment format="DD.MM.YYYY">{character.created}</Moment>
+          <Moment format={DATE_OF_CREATION}>{character.created}</Moment>
         </p>
       </div>
     </div>

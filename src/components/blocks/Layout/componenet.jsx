@@ -3,6 +3,7 @@ import qs from 'query-string';
 import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
+import TableItem from '@/components/blocks/TableItem';
 import PageHeader from '@/components/blocks/PageHeader';
 import Pagination from '@/components/blocks/Pagination';
 
@@ -11,10 +12,11 @@ import './styles.css';
 const Layout = ({
   tableRequest,
   titleName,
-  arrayOfHeaders = [],
+  arrayOfHeaders,
   tableDate,
-  tableItem: TableItem,
   tableInfo,
+  tableUrlTitle,
+  tableItemConfig,
 }) => {
   const { search } = useLocation();
 
@@ -37,7 +39,7 @@ const Layout = ({
         ))}
       </div>
       {tableDate.map((item) => (
-        <TableItem key={item.id} item={item} />
+        <TableItem key={item.id} item={item} config={tableItemConfig} urlTitle={tableUrlTitle} />
       ))}
       <Pagination totalPage={tableInfo.pages} />
     </div>
@@ -49,12 +51,13 @@ Layout.propTypes = {
   titleName: PropTypes.string,
   arrayOfHeaders: PropTypes.arrayOf(PropTypes.string),
   tableDate: PropTypes.arrayOf(PropTypes.object),
-  tableItem: PropTypes.elementType,
   tableInfo: PropTypes.shape({
     count: PropTypes.number,
     pages: PropTypes.number,
     next: PropTypes.string,
   }),
+  tableItemConfig: PropTypes.arrayOf(PropTypes.string),
+  tableUrlTitle: PropTypes.string,
 };
 
 Layout.defaultProps = {
@@ -62,8 +65,9 @@ Layout.defaultProps = {
   titleName: '',
   arrayOfHeaders: [],
   tableDate: [],
-  tableItem: React.Fragment,
   tableInfo: {},
+  tableItemConfig: [],
+  tableUrlTitle: '',
 };
 
 export default Layout;

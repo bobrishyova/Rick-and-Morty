@@ -1,9 +1,7 @@
 import { FETCH_MULTIPLE_CHARACTER, URL_CHARACTER } from '@/constants';
 
-const url = URL_CHARACTER;
-
 const fetchMultipleCharacters = (arrayId) => async (dispatch) => {
-  const response = await fetch(`${url}${arrayId}`);
+  const response = await fetch(`${URL_CHARACTER}${arrayId}`);
   const result = await response.json();
 
   dispatch({

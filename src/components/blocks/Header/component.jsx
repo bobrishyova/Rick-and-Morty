@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '@/images/logo.png';
+import { CHARACTERS_PAGE, LOCATIONS_PAGE, EPISODES_PAGE } from '@/constants';
 
 import './styles.css';
 
@@ -21,30 +22,30 @@ const Header = () => {
           </label>
           <ul className="menuBox">
             <li>
-              <a className="menuItem" href="/characters">
+              <a className="menuItem" href={CHARACTERS_PAGE}>
                 Characters
               </a>
             </li>
             <li>
-              <a className="menuItem" href="/locations">
+              <a className="menuItem" href={LOCATIONS_PAGE}>
                 Locations
               </a>
             </li>
             <li>
-              <a className="menuItem" href="/episodes">
+              <a className="menuItem" href={EPISODES_PAGE}>
                 Episodes
               </a>
             </li>
           </ul>
         </div>
         <ul className="navRickAndMorty">
-          <Link style={linksHeader} to="/characters">
+          <Link style={linksHeader} to={CHARACTERS_PAGE}>
             <li>Characters</li>
           </Link>
-          <Link style={linksHeader} to="/locations">
+          <Link style={linksHeader} to={LOCATIONS_PAGE}>
             <li>Locations</li>
           </Link>
-          <Link style={linksHeader} to="/episodes">
+          <Link style={linksHeader} to={EPISODES_PAGE}>
             <li>Episodes</li>
           </Link>
         </ul>

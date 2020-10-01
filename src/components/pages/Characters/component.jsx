@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
-import CharacterItem from '@/components/blocks/CharacterItem';
 import Layout from '@/components/blocks/Layout';
 
 const Characters = ({ getFetchCharacters, characters, charactersInfo }) => {
@@ -11,7 +10,8 @@ const Characters = ({ getFetchCharacters, characters, charactersInfo }) => {
       titleName="Characters"
       arrayOfHeaders={['Name', 'Status', 'Species', 'Gender']}
       tableDate={characters}
-      tableItem={CharacterItem}
+      tableItemConfig={['name', 'status', 'species', 'gender']}
+      tableUrlTitle="character"
       tableInfo={charactersInfo}
     />
   );

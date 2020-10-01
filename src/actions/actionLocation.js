@@ -1,9 +1,7 @@
 import { FETCH_LOCATION, URL_LOCATION } from '@/constants';
 
-const url = URL_LOCATION;
-
 const fetchLocation = (id) => async (dispatch) => {
-  const response = await fetch(`${url}${id}`);
+  const response = await fetch(`${URL_LOCATION}${id}`);
   const result = await response.json();
 
   dispatch({

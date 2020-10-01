@@ -1,9 +1,7 @@
-import { FETCH_LOCATIONS, URL_LOCATIONS } from '@/constants';
-
-const url = URL_LOCATIONS;
+import { FETCH_LOCATIONS, URL_LOCATION } from '@/constants';
 
 const fetchLocations = (page) => async (dispatch) => {
-  const response = await fetch(`${url}${page}`);
+  const response = await fetch(`${URL_LOCATION}/?page=${page}`);
   const result = await response.json();
 
   dispatch({

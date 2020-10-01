@@ -1,9 +1,7 @@
-import { FETCH_EPISODES, URL_EPISODES } from '@/constants';
-
-const url = URL_EPISODES;
+import { FETCH_EPISODES, URL_EPISODE } from '@/constants';
 
 const fetchEpisodes = (page) => async (dispatch) => {
-  const response = await fetch(`${url}${page}`);
+  const response = await fetch(`${URL_EPISODE}/?page=${page}`);
   const result = await response.json();
 
   dispatch({

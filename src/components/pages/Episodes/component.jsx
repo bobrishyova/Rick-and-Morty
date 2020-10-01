@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
-import EpisodeItem from '@/components/blocks/EpisodeItem';
 import Layout from '@/components/blocks/Layout';
 
 const Episodes = ({ getFetchEpisodes, episodes, episodesInfo }) => {
@@ -11,7 +10,8 @@ const Episodes = ({ getFetchEpisodes, episodes, episodesInfo }) => {
       titleName="Episodes"
       arrayOfHeaders={['Name', 'Air Date', 'Episode']}
       tableDate={episodes}
-      tableItem={EpisodeItem}
+      tableItemConfig={['name', 'air_date', 'episode']}
+      tableUrlTitle="episode"
       tableInfo={episodesInfo}
     />
   );

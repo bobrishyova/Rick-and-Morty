@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
-import LocationItem from '@/components/blocks/LocationItem';
 import Layout from '@/components/blocks/Layout';
 
 const Locations = ({ getFetchLocations, locations, locationsInfo }) => {
@@ -11,7 +10,8 @@ const Locations = ({ getFetchLocations, locations, locationsInfo }) => {
       titleName="Locations"
       arrayOfHeaders={['Name', 'Dimension', 'Type']}
       tableDate={locations}
-      tableItem={LocationItem}
+      tableItemConfig={['name', 'dimension', 'type']}
+      tableUrlTitle="location"
       tableInfo={locationsInfo}
     />
   );

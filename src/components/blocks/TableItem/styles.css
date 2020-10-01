@@ -1,0 +1,30 @@
+.linkWithInformation {
+	display: flex;
+	padding: 10px 0 10px 0;
+	border-bottom: 1px solid #ffffff;
+	align-items: center;
+}
+
+.divTableItemWithSmallerWidth {
+	width: 232px;
+	text-align: center;
+}
+
+.divTableItemWithSmallerWidth:first-child {
+	text-align: start;
+}
+
+.divItem {
+	width: 309px;
+	text-align: center;
+}
+
+.divItem:first-child {
+	text-align: start;
+}
+
+@media (max-width: 700px) {
+	.itemTable {
+		font-size: 12px;
+	}
+}

@@ -1,0 +1,150 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #565961;
+}
+
+.logoRickAndMorty {
+	width: 300px;
+	height: 60px;
+}
+
+.navRickAndMorty {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-right: 50px;
+	font-size: 18px;
+	width: 600px;
+	height: 60px;
+	list-style-type: none;
+	color: #ffffff;
+}
+
+.hamburgerMenu {
+	display: none;
+}
+
+.title {
+	display: none;
+}
+
+@media (max-width: 500px) {
+	.logoRickAndMorty {
+		display: none;
+	}
+	
+	.title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 160px;
+		height: 60px;
+		color: #ffffff;
+		font-size: 18px;
+		font-family: Bradley Hand, cursive;
+	}
+}
+
+@media (max-width: 700px) {
+	.hamburgerMenu { 
+		display: flex;
+	}
+
+	.navRickAndMorty { 
+		display: none;
+	}
+
+	#menuToggle {
+		opacity: 0;
+		display: none;
+	}
+	
+	#menuToggle:checked ~ .menuBtn > span {
+		transform: rotate(45deg);
+	}
+
+	#menuToggle:checked ~ .menuBtn {
+		position: fixed;
+	}
+
+	#menuToggle:checked ~ .menuBtn > span::before {
+		top: 0;
+		transform: rotate(0);
+		background-color: #000000;
+	}
+
+	#menuToggle:checked ~ .menuBtn > span::after {
+		top: 0;
+		transform: rotate(90deg);
+		background-color: #000000;
+	}
+
+	#menuToggle:checked ~ .menuBox {
+		visibility: visible;
+		right: 0;
+	}
+	
+	.menuBtn {
+		display: flex;
+		align-items: center;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		width: 26px;
+		height: 26px;
+		cursor: pointer;
+		z-index: 1;
+	}
+	
+	.menuBtn > span,
+	.menuBtn > span::before,
+	.menuBtn > span::after {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		background-color: #ffffff;
+		transition-duration: .25s;
+	}
+
+	.menuBtn > span::before {
+		content: '';
+		top: -8px;
+	}
+
+	.menuBtn > span::after {
+		content: '';
+		top: 8px;
+	}
+	
+	.menuBox {
+		display: block;
+		position: fixed;
+		visibility: hidden;
+		top: 0;
+		right: -100%;
+		width: 220px;
+		margin: 0;
+		padding: 50px 0;
+		list-style: none;
+		background-color: #ECEFF1;
+		box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+		transition-duration: .25s;
+	}
+	
+	.menuItem {
+		display: block;
+		padding: 10px 22px;
+		color: #000000;
+		font-size: 20px;
+		font-weight: 600;
+		text-decoration: none;
+		transition-duration: .25s;
+	}
+
+	.menuItem:hover {
+		background-color: #CFD8DC;
+	}
+}

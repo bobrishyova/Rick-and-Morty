@@ -1,22 +1,36 @@
-import React from 'react'
-import LocationItem from '../../blocks/LocationItem'
-import Layout from '../../blocks/Layout'
+import React from 'react';
+import PropTypes from 'prop-types';
+import noop from 'lodash/noop';
+import LocationItem from '@/components/blocks/LocationItem';
+import Layout from '@/components/blocks/Layout';
 
-const Locations = ({
-	getFetchLocations,
-	locations,
-	locationsInfo,
-}) => {
-	return (
-		<Layout
-			tableRequest={getFetchLocations}
-			titleName='Locations'
-			arrayOfHeaders={['Name', 'Dimension', 'Type']}
-			tableDate={locations}
-			tableItem={LocationItem}
-			tableInfo={locationsInfo}
-		/>
-	)
-}
+const Locations = ({ getFetchLocations, locations, locationsInfo }) => {
+  return (
+    <Layout
+      tableRequest={getFetchLocations}
+      titleName="Locations"
+      arrayOfHeaders={['Name', 'Dimension', 'Type']}
+      tableDate={locations}
+      tableItem={LocationItem}
+      tableInfo={locationsInfo}
+    />
+  );
+};
 
-export default Locations
+Locations.propTypes = {
+  getFetchLocations: PropTypes.func,
+  locations: PropTypes.arrayOf(PropTypes.object),
+  locationsInfo: PropTypes.shape({
+    count: PropTypes.number,
+    pages: PropTypes.number,
+    next: PropTypes.string,
+  }),
+};
+
+Locations.defaultProps = {
+  getFetchLocations: noop,
+  locations: [],
+  locationsInfo: {},
+};
+
+export default Locations;

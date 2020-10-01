@@ -1,3 +1,3 @@
-import Episodes from './container'
+import Episodes from './container';
 
-export default Episodes
+export default Episodes;

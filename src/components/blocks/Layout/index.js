@@ -1,3 +1,3 @@
-import Layout from './componenet'
+import Layout from './componenet';
 
-export default Layout
+export default Layout;

@@ -1,3 +1,3 @@
-import Characters from './container'
+import Characters from './container';
 
-export default Characters
+export default Characters;

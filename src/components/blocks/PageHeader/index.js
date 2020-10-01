@@ -1,3 +1,3 @@
-import PageHeader from './componenet'
+import PageHeader from './componenet';
 
-export default PageHeader
+export default PageHeader;

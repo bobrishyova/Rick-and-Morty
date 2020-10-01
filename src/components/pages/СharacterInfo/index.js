@@ -1,3 +1,3 @@
-import СharacterInfo from './container'
+import СharacterInfo from './container';
 
-export default СharacterInfo
+export default СharacterInfo;

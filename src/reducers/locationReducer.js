@@ -1,28 +1,27 @@
-import { FETCH_LOCATIONS, FETCH_LOCATION } from '../actions/actionTypes'
+import { FETCH_LOCATIONS, FETCH_LOCATION } from '@/constants';
 
 const initialState = {
-	locations: [],
-	locationsInfo: {},
-	location: {},
-}
+  locations: [],
+  locationsInfo: {},
+  location: {},
+};
 
 const locationReducer = (state = initialState, action) => {
-	switch(action.type) {
-		case FETCH_LOCATIONS:
-			return {
-				...state,
-				locations: action.locations,
-				locationsInfo: action.locationsInfo,
-			}
-		case FETCH_LOCATION:
-			return {
-				...state,
-				location: action.location,
-			}
-		default:
-			return state
-	}
-}
+  switch (action.type) {
+    case FETCH_LOCATIONS:
+      return {
+        ...state,
+        locations: action.locations,
+        locationsInfo: action.locationsInfo,
+      };
+    case FETCH_LOCATION:
+      return {
+        ...state,
+        location: action.location,
+      };
+    default:
+      return state;
+  }
+};
 
-export default locationReducer
-
+export default locationReducer;

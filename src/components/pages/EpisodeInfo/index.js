@@ -1,3 +1,3 @@
-import EpisodeInfo from './container'
+import EpisodeInfo from './container';
 
-export default EpisodeInfo
+export default EpisodeInfo;

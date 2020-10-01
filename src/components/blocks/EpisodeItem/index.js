@@ -1,3 +1,3 @@
-import EpisodeItem from './component'
+import EpisodeItem from './component';
 
-export default EpisodeItem
+export default EpisodeItem;

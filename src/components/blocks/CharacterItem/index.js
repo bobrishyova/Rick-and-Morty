@@ -1,3 +1,3 @@
-import CharacterItem from './component'
+import CharacterItem from './component';
 
-export default CharacterItem
+export default CharacterItem;

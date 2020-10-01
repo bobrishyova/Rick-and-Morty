@@ -1,3 +1,3 @@
-import LocationItem from './component'
+import LocationItem from './component';
 
-export default LocationItem
+export default LocationItem;

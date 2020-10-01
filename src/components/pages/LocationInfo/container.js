@@ -1,16 +1,16 @@
-import { connect } from 'react-redux'
-import LocationInfo from './component'
-import { fetchLocation } from '../../../actions/actionLocation'
-import { fetchMultipleCharacters } from '../../../actions/actionMultipleCharacters'
+import { connect } from 'react-redux';
+import fetchLocation from '@/actions/actionLocation';
+import fetchMultipleCharacters from '@/actions/actionMultipleCharacters';
+import LocationInfo from './component';
 
-const mapStateToProps = state => ({
-	location: state.locationReducer.location,
-	multipleCharacters: state.characterReducer.multipleCharacters,
-})
+const mapStateToProps = (state) => ({
+  location: state.locationReducer.location,
+  multipleCharacters: state.characterReducer.multipleCharacters,
+});
 
-const mapDispatchToProps = dispatch => ({
-	getFetchLocation: (id) => dispatch(fetchLocation(id)),
-	getFetchMultipleCharacters: (arrayUrl) => dispatch(fetchMultipleCharacters(arrayUrl))
-})
+const mapDispatchToProps = (dispatch) => ({
+  getFetchLocation: (id) => dispatch(fetchLocation(id)),
+  getFetchMultipleCharacters: (arrayUrl) => dispatch(fetchMultipleCharacters(arrayUrl)),
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(LocationInfo)
+export default connect(mapStateToProps, mapDispatchToProps)(LocationInfo);

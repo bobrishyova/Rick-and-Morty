@@ -1,3 +1,3 @@
-import LocationInfo from './container'
+import LocationInfo from './container';
 
-export default LocationInfo
+export default LocationInfo;

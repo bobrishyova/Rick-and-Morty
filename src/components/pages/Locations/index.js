@@ -1,3 +1,3 @@
-import Locations from './container'
+import Locations from './container';
 
-export default Locations
+export default Locations;

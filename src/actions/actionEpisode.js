@@ -1,14 +1,15 @@
-import { FETCH_EPISODE } from './actionTypes'
-import { URL_EPISODE } from '../constants/api'
+import { FETCH_EPISODE, URL_EPISODE } from '@/constants';
 
-const url = URL_EPISODE
+const url = URL_EPISODE;
 
-export const fetchEpisode = (id) => async dispatch => {
-	const response = await fetch(`${url}${id}`)
-	const result = await response.json()
+const fetchEpisode = (id) => async (dispatch) => {
+  const response = await fetch(`${url}${id}`);
+  const result = await response.json();
 
-	dispatch({
-		type: FETCH_EPISODE,
-		episode: result,
-	})
-}
+  dispatch({
+    type: FETCH_EPISODE,
+    episode: result,
+  });
+};
+
+export default fetchEpisode;

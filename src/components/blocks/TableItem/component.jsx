@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import './styles.css';
+import { LinkWithInformation, ItemTable, DivItem } from './styles';
 
 const TableItem = ({ item, config, urlTitle }) => {
   const linksCharacterItem = {
@@ -10,13 +9,13 @@ const TableItem = ({ item, config, urlTitle }) => {
     color: '#ffffff',
   };
   return (
-    <Link className="linkWithInformation" style={linksCharacterItem} to={`/${urlTitle}/${item.id}`}>
+    <LinkWithInformation style={linksCharacterItem} to={`/${urlTitle}/${item.id}`}>
       {config.map((info) => (
-        <div className={config.length === 3 ? 'divItem' : 'divTableItemWithSmallerWidth'}>
-          <p className="itemTable">{item[info]}</p>
-        </div>
+        <DivItem widthOfItems={config.length === 3}>
+          <ItemTable>{item[info]}</ItemTable>
+        </DivItem>
       ))}
-    </Link>
+    </LinkWithInformation>
   );
 };
 

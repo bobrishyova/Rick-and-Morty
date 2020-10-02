@@ -4,7 +4,7 @@ import { useLocation, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import createPagination from '@/helpers/createPagination';
 
-import './styles.css';
+import { DivWithPagination, PageSwitch, DivWithPage } from './styles';
 
 const Pagination = ({ totalPage }) => {
   const { search, pathname } = useLocation();
@@ -29,42 +29,40 @@ const Pagination = ({ totalPage }) => {
   );
 
   return (
-    <div className="divWithPagination">
-      <div
+    <DivWithPagination>
+      <PageSwitch
         role="button"
         tabIndex={0}
-        className="pageSwitch"
         onClick={handleSetCurrentPage(currentPage >= 2 ? currentPage - 1 : 1)}
         onKeyDown={handleSetCurrentPage(currentPage >= 2 ? currentPage - 1 : 1)}
       >
         &#171;
-      </div>
+      </PageSwitch>
       {createPagination({
         currentPage,
         totalPage,
       }).map((pagination) => (
-        <div
+        <DivWithPage
           role="button"
           tabIndex={0}
           key={pagination.key}
           onClick={handleSetCurrentPage(pagination.value)}
           onKeyDown={handleSetCurrentPage(pagination.value)}
-          className={`divWithPage ${currentPage === pagination.value ? 'selected' : ''} 
-					${pagination.value === '...' ? 'threeDotsStyle' : ''} `}
+          selected={currentPage === pagination.value}
+          threeDots={pagination.value === '...'}
         >
           {pagination.value}
-        </div>
+        </DivWithPage>
       ))}
-      <div
+      <PageSwitch
         role="button"
         tabIndex={0}
-        className="pageSwitch"
         onClick={handleSetCurrentPage(currentPage <= totalPage - 1 ? currentPage + 1 : totalPage)}
         onKeyDown={handleSetCurrentPage(currentPage <= totalPage - 1 ? currentPage + 1 : totalPage)}
       >
         &#187;
-      </div>
-    </div>
+      </PageSwitch>
+    </DivWithPagination>
   );
 };
 

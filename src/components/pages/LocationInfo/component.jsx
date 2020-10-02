@@ -4,7 +4,13 @@ import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
 import customArrayUrlParse from '@/helpers/customArrayUrlParse';
 
-import './styles.css';
+import {
+  InfoAboutResidents,
+  HeaderLocationInfo,
+  DivWithNameLocation,
+  DivWithTypeLocation,
+  Residents,
+} from './styles';
 
 const LocationInfo = ({
   getFetchMultipleCharacters,
@@ -32,15 +38,15 @@ const LocationInfo = ({
   }, [multipleCharacters]);
 
   return (
-    <div className="headerLocationInfo">
-      <div className="divWithNameLocation">{location.name}</div>
-      <div className="divWithTypeLocation">
+    <HeaderLocationInfo>
+      <DivWithNameLocation>{location.name}</DivWithNameLocation>
+      <DivWithTypeLocation>
         Type:
         {location.type}
-      </div>
-      <p className="residents">Residents:</p>
-      <p>{renderResident}</p>
-    </div>
+      </DivWithTypeLocation>
+      <Residents>Residents:</Residents>
+      <InfoAboutResidents>{renderResident}</InfoAboutResidents>
+    </HeaderLocationInfo>
   );
 };
 

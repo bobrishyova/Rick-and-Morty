@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './styles.css';
+import HeaderPage from './styles';
 
 const PageHeader = ({ titleName }) => {
   return (
-    <div className="pageHeader">
+    <HeaderPage>
       <p>{titleName}</p>
-    </div>
+    </HeaderPage>
   );
 };
 

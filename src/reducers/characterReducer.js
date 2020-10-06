@@ -1,4 +1,4 @@
-import { FETCH_CHARACTERS, FETCH_CHARACTER, FETCH_MULTIPLE_CHARACTER } from '@/constants';
+import { SUCCESS_CHARACTERS, SUCCESS_CHARACTER, SUCCESS_MULTIPLE_CHARACTER } from '@/constants';
 
 const initialState = {
   characters: [],
@@ -9,21 +9,21 @@ const initialState = {
 
 const characterReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_CHARACTERS:
+    case SUCCESS_CHARACTERS:
       return {
         ...state,
-        characters: action.characters,
-        charactersInfo: action.charactersInfo,
+        characters: action.payload.results,
+        charactersInfo: action.payload.info,
       };
-    case FETCH_CHARACTER:
+    case SUCCESS_CHARACTER:
       return {
         ...state,
-        character: action.character,
+        character: action.payload,
       };
-    case FETCH_MULTIPLE_CHARACTER:
+    case SUCCESS_MULTIPLE_CHARACTER:
       return {
         ...state,
-        multipleCharacters: action.multipleCharacters,
+        multipleCharacters: action.payload,
       };
     default:
       return state;

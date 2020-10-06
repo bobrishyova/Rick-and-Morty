@@ -26,12 +26,12 @@ const СharacterInfo = ({
 
   useEffect(() => {
     if (character.episode) {
-      getFetchMultipleEpisodes(customArrayUrlParse(character.episode));
+      getFetchMultipleEpisodes({ episodes: customArrayUrlParse(character.episode) });
     }
   }, [getFetchMultipleEpisodes, character.episode]);
 
   useEffect(() => {
-    getFetchCharacter(id);
+    getFetchCharacter({ id });
   }, [getFetchCharacter, id]);
 
   const renderEpisodes = useMemo(() => {

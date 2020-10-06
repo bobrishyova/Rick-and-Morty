@@ -23,13 +23,13 @@ const EpisodeInfo = ({
 
   useEffect(() => {
     if (episode.characters) {
-      getFetchMultipleCharacters(customArrayUrlParse(episode.characters));
+      getFetchMultipleCharacters({ characters: customArrayUrlParse(episode.characters) });
     }
   }, [getFetchMultipleCharacters, episode.characters]);
 
   useEffect(() => {
-    getFetchEpisode(id);
-  }, [id, getFetchEpisode]);
+    getFetchEpisode({ id });
+  }, [getFetchEpisode, id]);
 
   const renderCharacter = useMemo(() => {
     if (Array.isArray(multipleCharacters)) {

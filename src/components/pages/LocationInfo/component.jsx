@@ -22,13 +22,13 @@ const LocationInfo = ({
 
   useEffect(() => {
     if (location.residents) {
-      getFetchMultipleCharacters(customArrayUrlParse(location.residents));
+      getFetchMultipleCharacters({ characters: customArrayUrlParse(location.residents) });
     }
   }, [getFetchMultipleCharacters, location.residents]);
 
   useEffect(() => {
-    getFetchLocation(id);
-  }, [id, getFetchLocation]);
+    getFetchLocation({ id });
+  }, [getFetchLocation, id]);
 
   const renderResident = useMemo(() => {
     if (Array.isArray(multipleCharacters)) {

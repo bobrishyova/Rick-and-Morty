@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import fetchEpisode from '@/actions/actionEpisode';
-import fetchMultipleCharacters from '@/actions/actionMultipleCharacters';
+import { requestEpisode } from '@/actions/actionEpisode';
+import { requestMultipleCharacters } from '@/actions/actionMultipleCharacters';
 import EpisodeInfo from './component';
 
 const mapStateToProps = (state) => ({
@@ -9,8 +9,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getFetchEpisode: (id) => dispatch(fetchEpisode(id)),
-  getFetchMultipleCharacters: (arrayUrl) => dispatch(fetchMultipleCharacters(arrayUrl)),
+  getFetchEpisode: (payload) => dispatch(requestEpisode(payload)),
+  getFetchMultipleCharacters: (payload) => dispatch(requestMultipleCharacters(payload)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EpisodeInfo);

@@ -1,14 +1,16 @@
-import { FETCH_CHARACTERS, URL_CHARACTER } from '@/constants';
+import { FETCH_CHARACTERS, SUCCESS_CHARACTERS, ERROR_CHARACTERS } from '@/constants';
 
-const fetchCharacters = (page) => async (dispatch) => {
-  const response = await fetch(`${URL_CHARACTER}/?page=${page}`);
-  const result = await response.json();
+export const requestCharacters = (payload) => ({
+  type: FETCH_CHARACTERS,
+  payload,
+});
 
-  dispatch({
-    type: FETCH_CHARACTERS,
-    charactersInfo: result.info,
-    characters: result.results,
-  });
-};
+export const successCharacters = (payload) => ({
+  type: SUCCESS_CHARACTERS,
+  payload,
+});
 
-export default fetchCharacters;
+export const errorCharacters = (payload) => ({
+  type: ERROR_CHARACTERS,
+  payload,
+});

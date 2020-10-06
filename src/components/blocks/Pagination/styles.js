@@ -41,8 +41,7 @@ export const DivWithPage = styled.div`
   ${({ threeDots }) =>
     threeDots &&
     `
-		pointer-events: none;
-		}
+			pointer-events: none;
 	`}
 `;
 

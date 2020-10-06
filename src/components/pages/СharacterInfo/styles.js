@@ -70,28 +70,34 @@ export const CharacterWithEpisodes = styled.p`
 	margin: 5px 0;
 	@media (max-width: 755px) {
 		font-size: 14px;
+		${({ nameСharacter }) =>
+      nameСharacter &&
+      `
+			font-size: 18px;
+		`}
+		${({ infoCharacter }) =>
+      infoCharacter &&
+      `
+			font-size: 14px;
+		`}
 	}
 	@media (max-width: 350px) {
 		font-size: 13px;
+		${({ nameСharacter }) =>
+      nameСharacter &&
+      `
+			font-size: 16px;
+		`}
+		${({ infoCharacter }) =>
+      infoCharacter &&
+      `
+			font-size: 13px;
+		`}
 	}
+	${({ nameСharacter }) =>
+    nameСharacter &&
+    `
+		font-size: 28px;
+	`}
 }
-`;
-
-export const NameСharacter = styled.p`
-  font-size: 28px;
-  @media (max-width: 755px) {
-    font-size: 18px;
-  }
-  @media (max-width: 350px) {
-    font-size: 16px;
-  }
-`;
-
-export const InfoCharacter = styled.p`
-  @media (max-width: 755px) {
-    font-size: 14px;
-  }
-  @media (max-width: 350px) {
-    font-size: 13px;
-  }
 `;

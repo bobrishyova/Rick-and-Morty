@@ -21,42 +21,43 @@ export const HeaderEpisodeInfo = styled.div`
   }
 `;
 
-export const DivWithNameEpisode = styled.div`
-  font-size: 28px;
-  @media (max-width: 660px) {
-    font-size: 20px;
-  }
-  @media (max-width: 400px) {
-    font-size: 18px;
-  }
-`;
-
-export const DivWithAirDateEpisode = styled.div`
+export const DivEpisode = styled.div`
   font-size: 22px;
   margin-top: 15px;
   @media (max-width: 660px) {
     font-size: 16px;
+    ${({ divWithNameEpisode }) =>
+      divWithNameEpisode &&
+      `
+			font-size: 20px;
+		`}
   }
+  ${({ divWithNameEpisode }) =>
+    divWithNameEpisode &&
+    `
+		font-size: 28px;
+		margin-top: 0px;
+		@media (max-width: 400px) {
+			font-size: 18px;
+		}
+	`}
 `;
 
-export const DivWithEpisode = styled.p`
+export const Episodes = styled.p`
   font-size: 22px;
   margin: 15px 0 5px 0;
   @media (max-width: 660px) {
     font-size: 16px;
   }
-`;
-
-export const Characters = styled.p`
-  font-size: 22px;
-  margin-bottom: 5px;
-  @media (max-width: 660px) {
-    font-size: 16px;
-  }
-`;
-
-export const AllCharacters = styled.p`
-  @media (max-width: 660px) {
-    font-size: 16px;
-  }
+  ${({ characters }) =>
+    characters &&
+    `
+		margin: 0 0 5px 0;
+	`}
+  ${({ allCharacters }) =>
+    allCharacters &&
+    `
+		font-size: 18px;
+		margin: 0;
+	`}
 `;

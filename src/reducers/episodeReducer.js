@@ -1,4 +1,4 @@
-import { SUCCESS_EPISODES, SUCCESS_EPISODE, SUCCESS_MULTIPLE_EPISODES } from '@/constants';
+import { EPISODES, EPISODE, MULTIPLE_EPISODES } from '@/constants';
 
 const initialState = {
   episodes: [],
@@ -9,18 +9,18 @@ const initialState = {
 
 const episodeReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SUCCESS_EPISODES:
+    case EPISODES.SUCCESS:
       return {
         ...state,
         episodes: action.payload.results,
         episodesInfo: action.payload.info,
       };
-    case SUCCESS_EPISODE:
+    case EPISODE.SUCCESS:
       return {
         ...state,
         episode: action.payload,
       };
-    case SUCCESS_MULTIPLE_EPISODES:
+    case MULTIPLE_EPISODES.SUCCESS:
       return {
         ...state,
         multipleEpisodes: action.payload,

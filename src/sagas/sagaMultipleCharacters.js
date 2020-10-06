@@ -1,5 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { FETCH_MULTIPLE_CHARACTERS, URL_CHARACTER } from '@/constants';
+import { MULTIPLE_CHARACTERS, URL_CHARACTER } from '@/constants';
 import {
   successMultipleCharacters,
   errorMultipleCharacters,
@@ -18,5 +18,5 @@ function* fetchMultipleCharactersAsync({ payload }) {
 }
 
 export default function* watchFetchMultipleCharacters() {
-  yield takeLatest(FETCH_MULTIPLE_CHARACTERS, fetchMultipleCharactersAsync);
+  yield takeLatest(MULTIPLE_CHARACTERS.FETCH, fetchMultipleCharactersAsync);
 }

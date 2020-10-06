@@ -1,5 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { FETCH_LOCATION, URL_LOCATION } from '@/constants';
+import { LOCATION, URL_LOCATION } from '@/constants';
 import { successLocation, errorLocation } from '@/actions/actionLocation';
 
 function* fetchLocationAsync({ payload }) {
@@ -15,5 +15,5 @@ function* fetchLocationAsync({ payload }) {
 }
 
 export default function* watchFetchLocation() {
-  yield takeLatest(FETCH_LOCATION, fetchLocationAsync);
+  yield takeLatest(LOCATION.FETCH, fetchLocationAsync);
 }

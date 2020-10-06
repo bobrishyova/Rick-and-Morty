@@ -1,20 +1,16 @@
-import {
-  FETCH_MULTIPLE_CHARACTERS,
-  SUCCESS_MULTIPLE_CHARACTER,
-  ERROR_MULTIPLE_CHARACTER,
-} from '@/constants';
+import { MULTIPLE_CHARACTERS } from '@/constants';
 
 export const requestMultipleCharacters = (payload) => ({
-  type: FETCH_MULTIPLE_CHARACTERS,
+  type: MULTIPLE_CHARACTERS.FETCH,
   payload,
 });
 
 export const successMultipleCharacters = (payload) => ({
-  type: SUCCESS_MULTIPLE_CHARACTER,
+  type: MULTIPLE_CHARACTERS.SUCCESS,
   payload,
 });
 
 export const errorMultipleCharacters = (payload) => ({
-  type: ERROR_MULTIPLE_CHARACTER,
+  type: MULTIPLE_CHARACTERS.ERROR,
   payload,
 });

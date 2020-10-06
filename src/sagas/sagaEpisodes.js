@@ -1,12 +1,13 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { FETCH_EPISODES, URL_EPISODE } from '@/constants';
+import qs from 'query-string';
+import { EPISODES, URL_EPISODE } from '@/constants';
 import { successEpisodes, errorEpisodes } from '@/actions/actionEpisodes';
 
 function* fetchEpisodesAsync({ payload }) {
   const { page } = payload;
   try {
     const response = yield call(() => {
-      return fetch(`${URL_EPISODE}/?page=${page}`).then((result) => result.json());
+      return fetch(`${URL_EPISODE}?${qs.stringify({ page })}`).then((result) => result.json());
     });
     yield put(successEpisodes(response));
   } catch (error) {
@@ -15,5 +16,5 @@ function* fetchEpisodesAsync({ payload }) {
 }
 
 export default function* watchFetchEpisodes() {
-  yield takeLatest(FETCH_EPISODES, fetchEpisodesAsync);
+  yield takeLatest(EPISODES.FETCH, fetchEpisodesAsync);
 }

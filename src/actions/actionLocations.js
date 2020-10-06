@@ -1,16 +1,16 @@
-import { FETCH_LOCATIONS, SUCCESS_LOCATIONS, ERROR_LOCATIONS } from '@/constants';
+import { LOCATIONS } from '@/constants';
 
 export const requestLocations = (payload) => ({
-  type: FETCH_LOCATIONS,
+  type: LOCATIONS.FETCH,
   payload,
 });
 
 export const successLocations = (payload) => ({
-  type: SUCCESS_LOCATIONS,
+  type: LOCATIONS.SUCCESS,
   payload,
 });
 
 export const errorLocations = (payload) => ({
-  type: ERROR_LOCATIONS,
+  type: LOCATIONS.ERROR,
   payload,
 });

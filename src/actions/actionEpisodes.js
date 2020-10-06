@@ -1,16 +1,16 @@
-import { FETCH_EPISODES, SUCCESS_EPISODES, ERROR_EPISODES } from '@/constants';
+import { EPISODES } from '@/constants';
 
 export const requestEpisodes = (payload) => ({
-  type: FETCH_EPISODES,
+  type: EPISODES.FETCH,
   payload,
 });
 
 export const successEpisodes = (payload) => ({
-  type: SUCCESS_EPISODES,
+  type: EPISODES.SUCCESS,
   payload,
 });
 
 export const errorEpisodes = (payload) => ({
-  type: ERROR_EPISODES,
+  type: EPISODES.ERROR,
   payload,
 });

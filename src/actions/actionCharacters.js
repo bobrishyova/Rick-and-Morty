@@ -1,16 +1,16 @@
-import { FETCH_CHARACTERS, SUCCESS_CHARACTERS, ERROR_CHARACTERS } from '@/constants';
+import { CHARACTERS } from '@/constants';
 
 export const requestCharacters = (payload) => ({
-  type: FETCH_CHARACTERS,
+  type: CHARACTERS.FETCH,
   payload,
 });
 
 export const successCharacters = (payload) => ({
-  type: SUCCESS_CHARACTERS,
+  type: CHARACTERS.SUCCESS,
   payload,
 });
 
 export const errorCharacters = (payload) => ({
-  type: ERROR_CHARACTERS,
+  type: CHARACTERS.ERROR,
   payload,
 });

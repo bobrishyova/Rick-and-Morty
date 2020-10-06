@@ -1,4 +1,4 @@
-import { SUCCESS_LOCATIONS, SUCCESS_LOCATION } from '@/constants';
+import { LOCATIONS, LOCATION } from '@/constants';
 
 const initialState = {
   locations: [],
@@ -8,13 +8,13 @@ const initialState = {
 
 const locationReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SUCCESS_LOCATIONS:
+    case LOCATIONS.SUCCESS:
       return {
         ...state,
         locations: action.payload.results,
         locationsInfo: action.payload.info,
       };
-    case SUCCESS_LOCATION:
+    case LOCATION.SUCCESS:
       return {
         ...state,
         location: action.payload,

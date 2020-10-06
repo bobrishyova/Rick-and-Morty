@@ -1,4 +1,4 @@
-import { SUCCESS_CHARACTERS, SUCCESS_CHARACTER, SUCCESS_MULTIPLE_CHARACTER } from '@/constants';
+import { CHARACTERS, CHARACTER, MULTIPLE_CHARACTERS } from '@/constants';
 
 const initialState = {
   characters: [],
@@ -9,18 +9,18 @@ const initialState = {
 
 const characterReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SUCCESS_CHARACTERS:
+    case CHARACTERS.SUCCESS:
       return {
         ...state,
         characters: action.payload.results,
         charactersInfo: action.payload.info,
       };
-    case SUCCESS_CHARACTER:
+    case CHARACTER.SUCCESS:
       return {
         ...state,
         character: action.payload,
       };
-    case SUCCESS_MULTIPLE_CHARACTER:
+    case MULTIPLE_CHARACTERS.SUCCESS:
       return {
         ...state,
         multipleCharacters: action.payload,

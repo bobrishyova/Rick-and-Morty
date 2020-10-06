@@ -1,5 +1,5 @@
 import { takeLatest, put, call } from 'redux-saga/effects';
-import { FETCH_CHARACTER, URL_CHARACTER } from '@/constants';
+import { CHARACTER, URL_CHARACTER } from '@/constants';
 import { successCharacter, errorCharacter } from '@/actions/actionCharacter';
 
 function* fetchCharacterAsync({ payload }) {
@@ -15,5 +15,5 @@ function* fetchCharacterAsync({ payload }) {
 }
 
 export default function* watchFetchCharacter() {
-  yield takeLatest(FETCH_CHARACTER, fetchCharacterAsync);
+  yield takeLatest(CHARACTER.FETCH, fetchCharacterAsync);
 }

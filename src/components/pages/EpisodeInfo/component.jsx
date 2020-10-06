@@ -4,14 +4,7 @@ import PropTypes from 'prop-types';
 import noop from 'lodash/noop';
 import customArrayUrlParse from '@/helpers/customArrayUrlParse';
 
-import {
-  HeaderEpisodeInfo,
-  DivWithNameEpisode,
-  DivWithAirDateEpisode,
-  DivWithEpisode,
-  Characters,
-  AllCharacters,
-} from './styles';
+import { HeaderEpisodeInfo, DivEpisode, Episodes } from './styles';
 
 const EpisodeInfo = ({
   episode,
@@ -40,17 +33,17 @@ const EpisodeInfo = ({
 
   return (
     <HeaderEpisodeInfo>
-      <DivWithNameEpisode>{episode.name}</DivWithNameEpisode>
-      <DivWithAirDateEpisode>
+      <DivEpisode divWithNameEpisode>{episode.name}</DivEpisode>
+      <DivEpisode>
         Air Date:
         {episode.air_date}
-      </DivWithAirDateEpisode>
-      <DivWithEpisode>
+      </DivEpisode>
+      <Episodes>
         Episode:
         {episode.episode}
-      </DivWithEpisode>
-      <Characters>Сharacters:</Characters>
-      <AllCharacters>{renderCharacter}</AllCharacters>
+      </Episodes>
+      <Episodes characters>Сharacters:</Episodes>
+      <Episodes allCharacters>{renderCharacter}</Episodes>
     </HeaderEpisodeInfo>
   );
 };

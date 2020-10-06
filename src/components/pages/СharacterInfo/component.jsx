@@ -12,8 +12,6 @@ import {
   ImgCharacter,
   ImgCharacterWithEpisodes,
   CharacterWithEpisodes,
-  NameСharacter,
-  InfoCharacter,
 } from './styles';
 
 const СharacterInfo = ({
@@ -26,7 +24,7 @@ const СharacterInfo = ({
 
   useEffect(() => {
     if (character.episode) {
-      getFetchMultipleEpisodes({ episodes: customArrayUrlParse(character.episode) });
+      getFetchMultipleEpisodes({ episode: customArrayUrlParse(character.episode) });
     }
   }, [getFetchMultipleEpisodes, character.episode]);
 
@@ -49,23 +47,23 @@ const СharacterInfo = ({
         <CharacterWithEpisodes>{renderEpisodes}</CharacterWithEpisodes>
       </ImgCharacterWithEpisodes>
       <InfoAboutСharacter>
-        <NameСharacter>{character.name}</NameСharacter>
-        <InfoCharacter>
+        <CharacterWithEpisodes nameСharacter>{character.name}</CharacterWithEpisodes>
+        <CharacterWithEpisodes infoCharacter>
           Status:
           {character.status}
-        </InfoCharacter>
-        <InfoCharacter>
+        </CharacterWithEpisodes>
+        <CharacterWithEpisodes infoCharacter>
           Species:
           {character.species}
-        </InfoCharacter>
-        <InfoCharacter>
+        </CharacterWithEpisodes>
+        <CharacterWithEpisodes infoCharacter>
           Gender:
           {character.gender}
-        </InfoCharacter>
-        <InfoCharacter>
+        </CharacterWithEpisodes>
+        <CharacterWithEpisodes infoCharacter>
           Created:
           <Moment format={DATE_OF_CREATION}>{character.created}</Moment>
-        </InfoCharacter>
+        </CharacterWithEpisodes>
       </InfoAboutСharacter>
     </HeaderСharacterInfo>
   );

@@ -21,22 +21,25 @@ export const HeaderLocationInfo = styled.div`
   }
 `;
 
-export const DivWithNameLocation = styled.div`
+export const DivLocation = styled.div`
   font-size: 28px;
   @media (max-width: 660px) {
     font-size: 20px;
+    ${({ infoLocation }) =>
+      infoLocation &&
+      `
+			font-size: 16px;
+		`}
   }
   @media (max-width: 400px) {
     font-size: 18px;
   }
-`;
-
-export const DivWithTypeLocation = styled.div`
-  font-size: 22px;
-  margin: 15px 0 5px 0;
-  @media (max-width: 660px) {
-    font-size: 16px;
-  }
+  ${({ typeLocation }) =>
+    typeLocation &&
+    `
+		font-size: 22px;
+		margin: 15px 0 5px 0;
+	`}
 `;
 
 export const Residents = styled.p`

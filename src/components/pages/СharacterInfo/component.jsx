@@ -10,6 +10,8 @@ import {
   HeaderСharacterInfo,
   InfoAboutСharacter,
   ImgCharacter,
+  NameСharacter,
+  InfoCharacter,
   ImgCharacterWithEpisodes,
   CharacterWithEpisodes,
 } from './styles';
@@ -47,23 +49,23 @@ const СharacterInfo = ({
         <CharacterWithEpisodes>{renderEpisodes}</CharacterWithEpisodes>
       </ImgCharacterWithEpisodes>
       <InfoAboutСharacter>
-        <CharacterWithEpisodes nameСharacter>{character.name}</CharacterWithEpisodes>
-        <CharacterWithEpisodes infoCharacter>
+        <NameСharacter>{character.name}</NameСharacter>
+        <InfoCharacter>
           Status:
           {character.status}
-        </CharacterWithEpisodes>
-        <CharacterWithEpisodes infoCharacter>
+        </InfoCharacter>
+        <InfoCharacter>
           Species:
           {character.species}
-        </CharacterWithEpisodes>
-        <CharacterWithEpisodes infoCharacter>
+        </InfoCharacter>
+        <InfoCharacter>
           Gender:
           {character.gender}
-        </CharacterWithEpisodes>
-        <CharacterWithEpisodes infoCharacter>
+        </InfoCharacter>
+        <InfoCharacter>
           Created:
           <Moment format={DATE_OF_CREATION}>{character.created}</Moment>
-        </CharacterWithEpisodes>
+        </InfoCharacter>
       </InfoAboutСharacter>
     </HeaderСharacterInfo>
   );

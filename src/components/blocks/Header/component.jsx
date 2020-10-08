@@ -3,7 +3,19 @@ import { Link } from 'react-router-dom';
 import logo from '@/images/logo.png';
 import { CHARACTERS_PAGE, LOCATIONS_PAGE, EPISODES_PAGE } from '@/constants';
 
-import './styles.css';
+import {
+  HeaderPage,
+  LogoRickAndMorty,
+  NavRickAndMorty,
+  HamburgerMenu,
+  MenuButton,
+  MenuBox,
+  Title,
+  MenuItem,
+  MenuToggle,
+  Line,
+  Item,
+} from './styles';
 
 const Header = () => {
   const linksHeader = {
@@ -12,44 +24,38 @@ const Header = () => {
   };
   return (
     <>
-      <div className="header">
-        <img className="logoRickAndMorty" src={logo} alt="Rick And Morty" />
-        <div className="title">Rick and Morty</div>
-        <div className="hamburgerMenu">
-          <input id="menuToggle" type="checkbox" />
-          <label className="menuBtn" htmlFor="menuToggle">
-            <span />
-          </label>
-          <ul className="menuBox">
-            <li>
-              <a className="menuItem" href={CHARACTERS_PAGE}>
-                Characters
-              </a>
-            </li>
-            <li>
-              <a className="menuItem" href={LOCATIONS_PAGE}>
-                Locations
-              </a>
-            </li>
-            <li>
-              <a className="menuItem" href={EPISODES_PAGE}>
-                Episodes
-              </a>
-            </li>
-          </ul>
-        </div>
-        <ul className="navRickAndMorty">
+      <HeaderPage>
+        <LogoRickAndMorty src={logo} alt="Rick And Morty" />
+        <Title>Rick and Morty</Title>
+        <HamburgerMenu>
+          <MenuToggle id="menuToggle" type="checkbox" />
+          <MenuButton htmlFor="menuToggle">
+            <Line />
+          </MenuButton>
+          <MenuBox>
+            <Item>
+              <MenuItem href={CHARACTERS_PAGE}>Characters</MenuItem>
+            </Item>
+            <Item>
+              <MenuItem href={LOCATIONS_PAGE}>Locations</MenuItem>
+            </Item>
+            <Item>
+              <MenuItem href={EPISODES_PAGE}>Episodes</MenuItem>
+            </Item>
+          </MenuBox>
+        </HamburgerMenu>
+        <NavRickAndMorty>
           <Link style={linksHeader} to={CHARACTERS_PAGE}>
-            <li>Characters</li>
+            <Item>Characters</Item>
           </Link>
           <Link style={linksHeader} to={LOCATIONS_PAGE}>
-            <li>Locations</li>
+            <Item>Locations</Item>
           </Link>
           <Link style={linksHeader} to={EPISODES_PAGE}>
-            <li>Episodes</li>
+            <Item>Episodes</Item>
           </Link>
-        </ul>
-      </div>
+        </NavRickAndMorty>
+      </HeaderPage>
     </>
   );
 };

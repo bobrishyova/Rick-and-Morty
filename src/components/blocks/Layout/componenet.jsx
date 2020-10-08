@@ -7,7 +7,7 @@ import TableItem from '@/components/blocks/TableItem';
 import PageHeader from '@/components/blocks/PageHeader';
 import Pagination from '@/components/blocks/Pagination';
 
-import './styles.css';
+import { TableHeader, Information, TableItemsWithDiv } from './styles';
 
 const Layout = ({
   tableRequest,
@@ -26,23 +26,20 @@ const Layout = ({
   }, [tableRequest, search]);
 
   return (
-    <div className="tableHeader">
+    <TableHeader>
       <PageHeader titleName={titleName} />
-      <div className="information">
+      <Information>
         {arrayOfHeaders.map((header) => (
-          <p
-            key={header}
-            className={arrayOfHeaders.length === 4 ? 'tableItemsWithSmallerDiv' : 'tableItems'}
-          >
+          <TableItemsWithDiv key={header} firstItem={arrayOfHeaders.length === 4}>
             {header}
-          </p>
+          </TableItemsWithDiv>
         ))}
-      </div>
+      </Information>
       {tableDate.map((item) => (
         <TableItem key={item.id} item={item} config={tableItemConfig} urlTitle={tableUrlTitle} />
       ))}
       <Pagination totalPage={tableInfo.pages} />
-    </div>
+    </TableHeader>
   );
 };
 

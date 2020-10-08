@@ -6,7 +6,15 @@ import noop from 'lodash/noop';
 import customArrayUrlParse from '@/helpers/customArrayUrlParse';
 import DATE_OF_CREATION from '@/constants/format';
 
-import './styles.css';
+import {
+  HeaderСharacterInfo,
+  InfoAboutСharacter,
+  ImgCharacter,
+  ImgCharacterWithEpisodes,
+  CharacterWithEpisodes,
+  NameСharacter,
+  InfoCharacter,
+} from './styles';
 
 const СharacterInfo = ({
   getFetchCharacter,
@@ -34,32 +42,32 @@ const СharacterInfo = ({
   }, [multipleEpisodes]);
 
   return (
-    <div className="headerСharacterInfo">
-      <div className="imgCharacterWithEpisodes">
-        <img className="imgCharacter" src={character.image} alt="" />
-        <p>Episodes: </p>
-        <p>{renderEpisodes}</p>
-      </div>
-      <div className="infoAboutСharacter">
-        <p className="nameСharacter">{character.name}</p>
-        <p className="infoCharacter">
+    <HeaderСharacterInfo>
+      <ImgCharacterWithEpisodes>
+        <ImgCharacter src={character.image} alt="" />
+        <CharacterWithEpisodes>Episodes: </CharacterWithEpisodes>
+        <CharacterWithEpisodes>{renderEpisodes}</CharacterWithEpisodes>
+      </ImgCharacterWithEpisodes>
+      <InfoAboutСharacter>
+        <NameСharacter>{character.name}</NameСharacter>
+        <InfoCharacter>
           Status:
           {character.status}
-        </p>
-        <p className="infoCharacter">
+        </InfoCharacter>
+        <InfoCharacter>
           Species:
           {character.species}
-        </p>
-        <p className="infoCharacter">
+        </InfoCharacter>
+        <InfoCharacter>
           Gender:
           {character.gender}
-        </p>
-        <p className="infoCharacter">
+        </InfoCharacter>
+        <InfoCharacter>
           Created:
           <Moment format={DATE_OF_CREATION}>{character.created}</Moment>
-        </p>
-      </div>
-    </div>
+        </InfoCharacter>
+      </InfoAboutСharacter>
+    </HeaderСharacterInfo>
   );
 };
 

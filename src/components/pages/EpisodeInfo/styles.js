@@ -43,21 +43,18 @@ export const DivEpisode = styled.div`
 	`}
 `;
 
-export const Episodes = styled.p`
-  font-size: 22px;
-  margin: 15px 0 5px 0;
+export const AllCharacters = styled.p`
   @media (max-width: 660px) {
     font-size: 16px;
   }
-  ${({ characters }) =>
-    characters &&
-    `
-		margin: 0 0 5px 0;
-	`}
-  ${({ allCharacters }) =>
-    allCharacters &&
-    `
-		font-size: 18px;
-		margin: 0;
-	`}
+`;
+
+export const DivWithEpisode = styled(AllCharacters)`
+  font-size: 22px;
+  margin: 15px 0 5px 0;
+`;
+
+export const Characters = styled(AllCharacters)`
+  font-size: 22px;
+  margin-bottom: 5px;
 `;

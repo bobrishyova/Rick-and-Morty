@@ -22,7 +22,7 @@ const Layout = ({
 
   useEffect(() => {
     const page = Number.parseInt(qs.parse(search).page, 10);
-    tableRequest(page || 1);
+    tableRequest({ page: page || 1 });
   }, [tableRequest, search]);
 
   return (

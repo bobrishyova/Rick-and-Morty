@@ -1,13 +1,16 @@
-import { FETCH_MULTIPLE_EPISODES, URL_EPISODE } from '@/constants';
+import { MULTIPLE_EPISODES } from '@/constants';
 
-const fetchMultipleEpisodes = (arrayId) => async (dispatch) => {
-  const response = await fetch(`${URL_EPISODE}${arrayId}`);
-  const result = await response.json();
+export const requestMultipleEpisodes = (payload) => ({
+  type: MULTIPLE_EPISODES.FETCH,
+  payload,
+});
 
-  dispatch({
-    type: FETCH_MULTIPLE_EPISODES,
-    multipleEpisodes: result,
-  });
-};
+export const successMultipleEpisodes = (payload) => ({
+  type: MULTIPLE_EPISODES.SUCCESS,
+  payload,
+});
 
-export default fetchMultipleEpisodes;
+export const errorMultipleEpisodes = (payload) => ({
+  type: MULTIPLE_EPISODES.ERROR,
+  payload,
+});

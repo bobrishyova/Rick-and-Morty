@@ -1,13 +1,16 @@
-import { FETCH_LOCATION, URL_LOCATION } from '@/constants';
+import { LOCATION } from '@/constants';
 
-const fetchLocation = (id) => async (dispatch) => {
-  const response = await fetch(`${URL_LOCATION}${id}`);
-  const result = await response.json();
+export const requestLocation = (payload) => ({
+  type: LOCATION.FETCH,
+  payload,
+});
 
-  dispatch({
-    type: FETCH_LOCATION,
-    location: result,
-  });
-};
+export const successLocation = (payload) => ({
+  type: LOCATION.SUCCESS,
+  payload,
+});
 
-export default fetchLocation;
+export const errorLocation = (payload) => ({
+  type: LOCATION.ERROR,
+  payload,
+});

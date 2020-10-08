@@ -1,13 +1,16 @@
-import { FETCH_MULTIPLE_CHARACTER, URL_CHARACTER } from '@/constants';
+import { MULTIPLE_CHARACTERS } from '@/constants';
 
-const fetchMultipleCharacters = (arrayId) => async (dispatch) => {
-  const response = await fetch(`${URL_CHARACTER}${arrayId}`);
-  const result = await response.json();
+export const requestMultipleCharacters = (payload) => ({
+  type: MULTIPLE_CHARACTERS.FETCH,
+  payload,
+});
 
-  dispatch({
-    type: FETCH_MULTIPLE_CHARACTER,
-    multipleCharacters: result,
-  });
-};
+export const successMultipleCharacters = (payload) => ({
+  type: MULTIPLE_CHARACTERS.SUCCESS,
+  payload,
+});
 
-export default fetchMultipleCharacters;
+export const errorMultipleCharacters = (payload) => ({
+  type: MULTIPLE_CHARACTERS.ERROR,
+  payload,
+});

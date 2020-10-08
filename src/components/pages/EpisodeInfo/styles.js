@@ -46,11 +46,9 @@ export const AllCharacters = styled.p`
 `;
 
 export const DivWithEpisode = styled(AllCharacters)`
-  font-size: 22px;
   margin: 15px 0 5px 0;
 `;
 
 export const Characters = styled(AllCharacters)`
-  font-size: 22px;
   margin-bottom: 5px;
 `;

@@ -40,7 +40,6 @@ export const DivWithTypeLocation = styled.div`
 `;
 
 export const Residents = styled.p`
-  font-size: 22px;
   margin-bottom: 5px;
 `;
 

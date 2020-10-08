@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import fetchLocations from '@/actions/actionLocations';
+import { requestLocations } from '@/actions/actionLocations';
 import Locations from './component';
 
 const mapStateToProps = (state) => ({
@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getFetchLocations: (payload) => dispatch(fetchLocations(payload)),
+  getFetchLocations: (payload) => dispatch(requestLocations(payload)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Locations);

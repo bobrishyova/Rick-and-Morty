@@ -1,4 +1,4 @@
-import { FETCH_EPISODES, FETCH_EPISODE, FETCH_MULTIPLE_EPISODES } from '@/constants';
+import { EPISODES, EPISODE, MULTIPLE_EPISODES } from '@/constants';
 
 const initialState = {
   episodes: [],
@@ -9,21 +9,21 @@ const initialState = {
 
 const episodeReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_EPISODES:
+    case EPISODES.SUCCESS:
       return {
         ...state,
-        episodes: action.episodes,
-        episodesInfo: action.episodesInfo,
+        episodes: action.payload.results,
+        episodesInfo: action.payload.info,
       };
-    case FETCH_EPISODE:
+    case EPISODE.SUCCESS:
       return {
         ...state,
-        episode: action.episode,
+        episode: action.payload,
       };
-    case FETCH_MULTIPLE_EPISODES:
+    case MULTIPLE_EPISODES.SUCCESS:
       return {
         ...state,
-        multipleEpisodes: action.multipleEpisodes,
+        multipleEpisodes: action.payload,
       };
     default:
       return state;

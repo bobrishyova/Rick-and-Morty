@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import fetchEpisodes from '@/actions/actionEpisodes';
+import { requestEpisodes } from '@/actions/actionEpisodes';
 import Episodes from './component';
 
 const mapStateToProps = (state) => ({
@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getFetchEpisodes: (payload) => dispatch(fetchEpisodes(payload)),
+  getFetchEpisodes: (payload) => dispatch(requestEpisodes(payload)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Episodes);

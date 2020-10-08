@@ -1,14 +1,16 @@
-import { FETCH_EPISODES, URL_EPISODE } from '@/constants';
+import { EPISODES } from '@/constants';
 
-const fetchEpisodes = (page) => async (dispatch) => {
-  const response = await fetch(`${URL_EPISODE}/?page=${page}`);
-  const result = await response.json();
+export const requestEpisodes = (payload) => ({
+  type: EPISODES.FETCH,
+  payload,
+});
 
-  dispatch({
-    type: FETCH_EPISODES,
-    episodesInfo: result.info,
-    episodes: result.results,
-  });
-};
+export const successEpisodes = (payload) => ({
+  type: EPISODES.SUCCESS,
+  payload,
+});
 
-export default fetchEpisodes;
+export const errorEpisodes = (payload) => ({
+  type: EPISODES.ERROR,
+  payload,
+});

@@ -1,8 +1,10 @@
-export const FETCH_CHARACTERS = 'FETCH_CHARACTERS';
-export const FETCH_LOCATION = 'FETCH_LOCATION';
-export const FETCH_EPISODES = 'FETCH_EPISODES';
-export const FETCH_CHARACTER = 'FETCH_CHARACTER';
-export const FETCH_LOCATIONS = 'FETCH_LOCATIONS';
-export const FETCH_MULTIPLE_CHARACTER = 'FETCH_MULTIPLE_CHARACTER';
-export const FETCH_EPISODE = 'FETCH_EPISODE';
-export const FETCH_MULTIPLE_EPISODES = 'FETCH_MULTIPLE_EPISODES';
+import createActions from '@/helpers/createActions';
+
+export const CHARACTERS = createActions('CHARACTERS');
+export const LOCATION = createActions('LOCATION');
+export const EPISODES = createActions('EPISODES');
+export const CHARACTER = createActions('CHARACTER');
+export const LOCATIONS = createActions('LOCATIONS');
+export const MULTIPLE_CHARACTERS = createActions('MULTIPLE_CHARACTERS');
+export const EPISODE = createActions('EPISODE');
+export const MULTIPLE_EPISODES = createActions('MULTIPLE_EPISODES');

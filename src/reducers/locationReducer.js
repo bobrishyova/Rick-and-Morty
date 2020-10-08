@@ -1,4 +1,4 @@
-import { FETCH_LOCATIONS, FETCH_LOCATION } from '@/constants';
+import { LOCATIONS, LOCATION } from '@/constants';
 
 const initialState = {
   locations: [],
@@ -8,16 +8,16 @@ const initialState = {
 
 const locationReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_LOCATIONS:
+    case LOCATIONS.SUCCESS:
       return {
         ...state,
-        locations: action.locations,
-        locationsInfo: action.locationsInfo,
+        locations: action.payload.results,
+        locationsInfo: action.payload.info,
       };
-    case FETCH_LOCATION:
+    case LOCATION.SUCCESS:
       return {
         ...state,
-        location: action.location,
+        location: action.payload,
       };
     default:
       return state;

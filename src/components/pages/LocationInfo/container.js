@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import fetchLocation from '@/actions/actionLocation';
-import fetchMultipleCharacters from '@/actions/actionMultipleCharacters';
+import { requestLocation } from '@/actions/actionLocation';
+import { requestMultipleCharacters } from '@/actions/actionMultipleCharacters';
 import LocationInfo from './component';
 
 const mapStateToProps = (state) => ({
@@ -9,8 +9,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getFetchLocation: (id) => dispatch(fetchLocation(id)),
-  getFetchMultipleCharacters: (arrayUrl) => dispatch(fetchMultipleCharacters(arrayUrl)),
+  getFetchLocation: (payload) => dispatch(requestLocation(payload)),
+  getFetchMultipleCharacters: (payload) => dispatch(requestMultipleCharacters(payload)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(LocationInfo);

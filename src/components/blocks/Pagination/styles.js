@@ -44,7 +44,6 @@ export const DivWithPage = styled(PageSwitch)`
   ${({ threeDots }) =>
     threeDots &&
     `
-		pointer-events: none;
-		}
+			pointer-events: none;
 	`}
 `;

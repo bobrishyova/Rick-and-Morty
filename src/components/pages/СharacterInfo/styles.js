@@ -75,7 +75,6 @@ export const InfoCharacter = styled.p`
 `;
 
 export const CharacterWithEpisodes = styled(InfoCharacter)`
-	font-size: 22px;
 	margin: 5px 0;
 }
 `;

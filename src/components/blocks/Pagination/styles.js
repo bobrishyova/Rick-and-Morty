@@ -13,39 +13,6 @@ export const DivWithPagination = styled.div`
   }
 `;
 
-export const DivWithPage = styled.div`
-  padding: 8px 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  max-width: 40px;
-  max-height: 40px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @media (max-width: 600px) {
-    padding: 4px 8px;
-  }
-  &:hover {
-    background-color: #dddddd;
-    color: #1a1a1a;
-  }
-  ${({ selected }) =>
-    selected &&
-    `
-		background-color: #171717;
-		color: #ffffff;
-		pointer-events: none;
-	`}
-  ${({ threeDots }) =>
-    threeDots &&
-    `
-		pointer-events: none;
-		}
-	`}
-`;
-
 export const PageSwitch = styled.div`
   padding: 8px 16px;
   cursor: pointer;
@@ -64,4 +31,20 @@ export const PageSwitch = styled.div`
   @media (max-width: 600px) {
     padding: 4px 8px;
   }
+`;
+
+export const DivWithPage = styled(PageSwitch)`
+  ${({ selected }) =>
+    selected &&
+    `
+		background-color: #171717;
+		color: #ffffff;
+		pointer-events: none;
+	`}
+  ${({ threeDots }) =>
+    threeDots &&
+    `
+		pointer-events: none;
+		}
+	`}
 `;

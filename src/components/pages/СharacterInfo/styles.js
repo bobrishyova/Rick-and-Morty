@@ -65,15 +65,18 @@ export const ImgCharacter = styled.img`
 
 export const ImgCharacterWithEpisodes = styled.div``;
 
-export const CharacterWithEpisodes = styled.p`
+export const InfoCharacter = styled.p`
+  @media (max-width: 755px) {
+    font-size: 14px;
+  }
+  @media (max-width: 350px) {
+    font-size: 13px;
+  }
+`;
+
+export const CharacterWithEpisodes = styled(InfoCharacter)`
 	font-size: 22px;
 	margin: 5px 0;
-	@media (max-width: 755px) {
-		font-size: 14px;
-	}
-	@media (max-width: 350px) {
-		font-size: 13px;
-	}
 }
 `;
 
@@ -84,14 +87,5 @@ export const NameСharacter = styled.p`
   }
   @media (max-width: 350px) {
     font-size: 16px;
-  }
-`;
-
-export const InfoCharacter = styled.p`
-  @media (max-width: 755px) {
-    font-size: 14px;
-  }
-  @media (max-width: 350px) {
-    font-size: 13px;
   }
 `;

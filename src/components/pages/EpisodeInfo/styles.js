@@ -39,24 +39,18 @@ export const DivWithAirDateEpisode = styled.div`
   }
 `;
 
-export const DivWithEpisode = styled.p`
-  font-size: 22px;
-  margin: 15px 0 5px 0;
-  @media (max-width: 660px) {
-    font-size: 16px;
-  }
-`;
-
-export const Characters = styled.p`
-  font-size: 22px;
-  margin-bottom: 5px;
-  @media (max-width: 660px) {
-    font-size: 16px;
-  }
-`;
-
 export const AllCharacters = styled.p`
   @media (max-width: 660px) {
     font-size: 16px;
   }
+`;
+
+export const DivWithEpisode = styled(AllCharacters)`
+  font-size: 22px;
+  margin: 15px 0 5px 0;
+`;
+
+export const Characters = styled(AllCharacters)`
+  font-size: 22px;
+  margin-bottom: 5px;
 `;
